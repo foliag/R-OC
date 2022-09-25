@@ -32,7 +32,6 @@ macOS-10.16-x86_64-i386-64bit
 # Demo
 * Generate toy simulation data
 ```
-
 n_overlap = 3
 p = sum(n_groupsize0) - n_overlap*(n_group0-1)
 rho = 0.5
@@ -59,7 +58,6 @@ beta[p_sig_index2,1] = coef2
 
 s = random.randint(0,100000000)+os.getpid()
 Y,X,group_true, err = gen_var_mono(n_sample,p,rho,prop,beta,s,error='N')
-
 ```
 
 * Implement algorithm and save results
