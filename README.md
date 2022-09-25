@@ -30,8 +30,18 @@ macOS-10.16-x86_64-i386-64bit
 ```
 
 # Demo
-* Generate toy simulation data
+* Generate toy example data
 ```
+import sys
+sys.path.append(r'/HALOS/sourceROC')   #change the pathway to the source code's location
+
+import rkmeans_source as rk
+import numpy as np
+import pandas as pd
+import random
+import os
+os.chdir("/HALOS")   #pathway to save the results
+
 n_overlap = 3
 p = sum(n_groupsize0) - n_overlap*(n_group0-1)
 rho = 0.5
@@ -66,13 +76,11 @@ Y,X,group_true, err = gen_var_mono(n_sample,p,rho,prop,beta,s,error='N')
 print("current method: R-OC")
 group_roc, beta_roc, intercept_roc, evalu_roc, select_roc, group_rep_roc = rk.rep_kmeans_robust_grp(X, Y, k, group_true, beta, prop, group_structure=group_structure0,n_groupsize = n_groupsize0,delta = 1.3, rep_time = 5)
 
-
 print(evalu_roc)   #evaluation result
 print(group_roc)   #subgroup identification result
 beta_roc[:5,:]     #subgroup coefficients, column for each subgroup
 print(select_roc)  #evaluation result for each initial value
 print(group_rep_roc)   #subgroup identification result for each initial value
-
 
 pd.DataFrame(beta_roc.T).to_csv("beta_roc.csv",mode = 'a',index =False,header = None)       
 pd.DataFrame(group_roc.reshape(1,-1)).to_csv("group_roc.csv",mode = 'a',index =False,header = None)
