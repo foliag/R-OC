@@ -1,4 +1,4 @@
-# HALOS
+# R-OC
 This is a `Python` implementation of the following paper:
 Sun, Y., Luo, Z., & Fan, X. (2022). Robust structured heterogeneity analysis approach for high-dimensional data. Statistics in medicine, 41(17), 3229–3259. https://doi.org/10.1002/sim.9414
 
