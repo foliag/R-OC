@@ -33,7 +33,7 @@ macOS-10.16-x86_64-i386-64bit
 * Generate toy example data
 ```
 import sys
-sys.path.append(r'/HALOS/sourceROC')   #change the pathway to the source code's location
+sys.path.append(r'/R-OC/sourceROC')   #change the pathway to the source code's location
 
 import rkmeans_source as rk
 import numpy as np
